@@ -23,7 +23,7 @@ MainWindow::MainWindow()
 	this->clear_button.set_label("C");
 
 	for (int i = 0; i < 10; i++) {
-		this->grid.attach(this->m_buttons[i], i % 3, i / 3 + 2, 1, 1);
+		this->grid.attach(this->m_buttons[i], i % 3, i / 3 + 1, 1, 1);
 		this->m_buttons[i].set_label(std::to_string(i));
 		this->m_buttons[i].signal_clicked().connect(sigc::bind<int>(sigc::mem_fun(*this, &MainWindow::btn_click), i));
 	}
