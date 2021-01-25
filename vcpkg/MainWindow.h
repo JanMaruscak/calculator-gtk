@@ -24,6 +24,9 @@ class MainWindow : public Window
 	Gtk::Button addition_button;
 	Gtk::Button substract_button;
 	Gtk::Button clear_button;
+	Gtk::Button dot_button;
+	Gtk::Button negate_button;
+	Gtk::Button percentage_button;
 public:
 	MainWindow();
 	void num_click(int i);
