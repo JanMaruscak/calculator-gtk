@@ -6,7 +6,9 @@
 #include <gtkmm/builder.h>
 #include <gtkmm/grid.h>
 #include <gtkmm/label.h>
+#include <gtkmm.h>
 #include <iostream>
+#include <string>
 
 using namespace Gtk;
 using namespace Glib;
@@ -24,5 +26,6 @@ class MainWindow : public Window
 	Gtk::Button clear_button;
 public:
 	MainWindow();
-	void btn_click(int i);
+	void num_click(int i);
+	void oper_click(std::string key);
 };
