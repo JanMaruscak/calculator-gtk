@@ -9,7 +9,7 @@ using namespace Gtk;
 MainWindow::MainWindow()
 {
 	RefPtr<CssProvider> css_provider = CssProvider::create();
-	css_provider->load_from_data("grid {background-image: image(black)} button {margin: 10px; background-image: image(gray); color: white; border: 0; outline: 0; border-radius: 50%; font-size: large;} window {background-image: image(black);} .orange{background-image: image(orange);} .big{border-radius: 25%; margin: 10px;} .light{background-image: image(lightgray); color: black;} label{color:white; font-size: 70;} .small{font-size: 30; color: gray;}");
+	css_provider->load_from_data("grid {background-image: image(black)} button {margin: 10px; background-image: image(gray); color: white; border: 0; outline: 0; border-radius: 25%; font-size: large;} window {background-image: image(black);} .orange{background-image: image(orange);} .big{border-radius: 25%; margin: 10px;} .light{background-image: image(lightgray); color: black;} label{color:white; font-size: 70;} .small{font-size: 30; color: gray;}");
 	addition_button.get_style_context()->add_provider(css_provider, GTK_STYLE_PROVIDER_PRIORITY_USER);
 	substract_button.get_style_context()->add_provider(css_provider, GTK_STYLE_PROVIDER_PRIORITY_USER);
 	multiply_button.get_style_context()->add_provider(css_provider, GTK_STYLE_PROVIDER_PRIORITY_USER);
@@ -26,7 +26,7 @@ MainWindow::MainWindow()
 
 	this->grid.attach(this->addition_button, 4, 1, 1, 1);
 	this->addition_button.set_label("+");
-	this->substract_button.signal_clicked().connect(sigc::bind<std::string>(sigc::mem_fun(*this, &MainWindow::oper_click), "+"));
+	this->addition_button.signal_clicked().connect(sigc::bind<std::string>(sigc::mem_fun(*this, &MainWindow::oper_click), "+"));
 	this->addition_button.get_style_context()->add_class("orange");
 
 	this->grid.attach(this->substract_button, 4, 2, 1, 1);
